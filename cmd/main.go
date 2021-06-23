@@ -18,7 +18,7 @@ var api *slack.Client
 
 func main() {
 
-	err := godotenv.Load("/Users/iahmed/work/go-slack-shuffle/.env")
+	err := godotenv.Load()
 
 	// do not break code if .evn not found
 	if err != nil {
