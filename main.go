@@ -18,7 +18,7 @@ var api *slack.Client
 
 func main() {
 
-	err := godotenv.Load()
+	err := godotenv.Load(".env")
 
 	// do not break code if .evn not found
 	if err != nil {
@@ -38,6 +38,8 @@ func main() {
 
 	http.HandleFunc("/hello", helloHandler)
 	http.HandleFunc("/shuffle", slashCommandHandler)
+
+	log.Println("Server started..")
 	log.Fatal(http.ListenAndServe(":8000", nil))
 }
 
